@@ -1,4 +1,5 @@
 const { Application } = require('egg');
+const { FrameHandler } = require('./lib/src');
 
 // app.js or agent.js
 class AppBootHook {
@@ -24,10 +25,9 @@ class AppBootHook {
     // All files have loaded, start plugin here.
     this.app.mqttclient.on('connect', () => {
       this.app.mqttclient.on('message', (topic, payload) => {
-        console.log(
-          `Receive payload from topic: ${topic}, payload.length = ${payload.length} `,
-          payload
-        );
+        const payloadU8Buf = new Uint8Array(payload);
+        const hFrame = new FrameHandler(payloadU8Buf);
+        hFrame.parseFrame();
       });
     });
   }

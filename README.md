@@ -2,6 +2,19 @@
 
 # Semantic versioning
 
+## 1.0.0
+
+`22-06-2023`
+
+- Parse the received frame.
+  ```js
+  // Cast U8 array to U16 array (2 array in the same buffer)
+  const payload = new Buffer();
+  const payloadU8Buf = new Uint8Array(payload);
+  const payloadU16Buf = new Uint16Array(payloadU8Buf.buffer);
+  ```
+  - Config for multiple parsing module based on class
+
 ## 0.0.0
 
 `22-06-2023`
