@@ -1,17 +1,20 @@
 {
-  "name": "desiot",
+  "name": "egg-mqttclient",
   "version": "1.0.0",
   "description": "",
-  "private": true,
-  "egg": {
-    "declarations": true
+  "eggPlugin": {
+    "name": "mqttclient"
   },
+  "keywords": [
+    "egg",
+    "eggPlugin",
+    "egg-plugin"
+  ],
   "dependencies": {
-    "dotenv": "^16.3.1",
-    "egg": "^3",
-    "egg-scripts": "^2"
+    "mqtt": "^4.3.7"
   },
   "devDependencies": {
+    "egg": "^3",
     "egg-bin": "^5",
     "egg-ci": "^2",
     "egg-mock": "^5",
@@ -22,27 +25,29 @@
     "node": ">=16.0.0"
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-desiot",
-    "stop": "egg-scripts stop --title=egg-server-desiot",
-    "dev": "egg-bin dev",
-    "debug": "egg-bin debug",
     "test": "npm run lint -- --fix && npm run test-local",
     "test-local": "egg-bin test",
     "cov": "egg-bin cov",
     "lint": "eslint .",
     "ci": "npm run lint && npm run cov"
   },
+  "files": [
+    "app.js",
+    "agent.js",
+    "config",
+    "app"
+  ],
   "ci": {
-    "version": "16, 18",
-    "type": "github"
+    "version": "16, 18"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/eggjs/egg-mqttclient.git"
   },
-  "author": "DESIoT team",
-  "license": "MIT",
-  "workspaces": [
-    "lib/plugin/egg-mqttclient"
-  ]
+  "bugs": {
+    "url": "https://github.com/eggjs/egg/issues"
+  },
+  "homepage": "https://github.com/eggjs/egg-mqttclient#readme",
+  "author": "DESIoT Team",
+  "license": "MIT"
 }
