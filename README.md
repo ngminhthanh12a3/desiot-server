@@ -2,6 +2,32 @@
 
 # Semantic versioning
 
+## 1.1.0
+
+`23-06-2023`
+
+- Handle command of virtual storage writing.
+  - Get gateway id (12 byte).
+  - Get connection type and connection ID.
+  - Setup database plugin.
+    - Setup database npm workspace.
+    - Setup database configuration in ./server/config/config.default.js and plugin.js.
+    - Setup egg-plugin command.
+    - Install mongoose by npm.
+    - Add index.d.ts
+      ```ts
+      declare module 'egg' {
+        interface Application {
+          mqttclient: MqttClient;
+        }
+        interface EggAppConfig {
+          mqttclient: EggMqttConfig;
+        }
+      }
+      ```
+    - Add app.js, agent.js, and config ./config/config.default.js
+    - Create general device colection service and query.
+
 ## 1.0.0
 
 `22-06-2023`

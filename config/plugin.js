@@ -10,4 +10,8 @@ module.exports = {
     enable: true,
     path: path.join(__dirname, '../lib/plugin/egg-mqttclient'),
   },
+  mongoose: {
+    enable: true,
+    path: path.join(__dirname, '../lib/plugin/egg-mongoose'),
+  },
 };

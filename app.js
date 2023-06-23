@@ -23,10 +23,11 @@ class AppBootHook {
 
   async didLoad() {
     // All files have loaded, start plugin here.
+    const ctx = this.app.createAnonymousContext();
     this.app.mqttclient.on('connect', () => {
       this.app.mqttclient.on('message', (topic, payload) => {
         const payloadU8Buf = new Uint8Array(payload);
-        const hFrame = new FrameHandler(payloadU8Buf);
+        const hFrame = new FrameHandler(payloadU8Buf, ctx);
         hFrame.parseFrame();
       });
     });

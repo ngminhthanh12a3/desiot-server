@@ -23,6 +23,6 @@ declare module 'egg' {
     mqttclient: MqttClient;
   }
   interface EggAppConfig {
-    mqttclient: EggMqttConfig;
+    mongoose: EggMqttConfig;
   }
 }

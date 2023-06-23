@@ -43,6 +43,7 @@
   "author": "DESIoT team",
   "license": "MIT",
   "workspaces": [
-    "lib/plugin/egg-mqttclient"
+    "lib/plugin/egg-mqttclient",
+    "lib/plugin/egg-mongoose"
   ]
 }
