@@ -54,6 +54,12 @@ module.exports = (appInfo) => {
         pass: DESIOT_MONGOOSE_PASS,
       },
     },
+    session: {
+      key: 'DESIOT_SESS',
+      maxAge: 24 * 3600 * 1000, // 1 day
+      httpOnly: true,
+      encrypt: true,
+    },
   };
 
   return {

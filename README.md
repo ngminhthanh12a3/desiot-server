@@ -2,6 +2,45 @@
 
 # Semantic versioning
 
+## 1.2.0
+
+`23-06-2023`
+
+- Setup front-end to create a gateway in the database.
+  - Create Ant Design Pro project by pro-cli.
+  - Use no-mock mode(start:no-mock) and proxy to connect to the server.
+  - Setup umi_locale localStorage in src/global.ts
+    ```ts
+    const currentUmiLocale = localStorage.getItem('umi_locale');
+    if (!currentUmiLocale) {
+      const defaultLocale = 'en-US';
+      localStorage.setItem('umi_locale', defaultLocale);
+    }
+    ```
+  - Set title of config file (**config\defaultSettings.ts**) and login file (**src/pages/user/Login/index.tsx**).
+  - Set contents in locale folder (**src/locales**)
+    - pages.layouts.userLayout.title
+    - app.copyright.produce
+  - Create **/api/currentUser** api in the server.
+  - Create **controller.user.currentUser**
+  - Create **/api/login/account** api and **controller.user.loginAccount**
+  - Config config/plugin.js
+    ```ts
+    security: {
+      enable: false,
+    }
+    ```
+  - Config config/config.default.js
+    ```ts
+      session: {
+      key: 'EGG_SESS',
+      maxAge: 24 * 3600 * 1000, // 1 day
+      httpOnly: true,
+      encrypt: true,
+    },
+    ```
+  - Create **/api/login/outLogin** api and **controller.user.outLogin**.
+
 ## 1.1.0
 
 `23-06-2023`
