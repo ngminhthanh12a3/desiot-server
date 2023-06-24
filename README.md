@@ -2,6 +2,40 @@
 
 # Semantic versioning
 
+## 1.3.0
+
+`24-06-2034`
+
+- Setup **/dashboard/device** for users to create a device profile.
+
+  - **config/config.ts**
+
+  ```ts
+  {
+    name: 'device',
+    icon: 'smile',
+    path: '/dashboard/device',
+    component: './dashboard/device',
+  },
+  ```
+
+  - Make directory **src/pages/dashboard/device**
+
+    - index.tsx
+
+      ```tsx
+      import type { FC } from 'react';
+
+      const DevicePage: FC = () => {
+        return <></>;
+      };
+
+      export default DevicePage;
+      ```
+
+  - Edit file **src/locales/en-US/menu.ts**
+  - Disable notices.
+
 ## 1.2.0
 
 `23-06-2023`
