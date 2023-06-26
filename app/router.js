@@ -9,4 +9,6 @@ module.exports = (app) => {
   router.get('/api/currentUser', controller.user.currentUser);
   router.post('/api/login/account', controller.user.loginAccount);
   router.post('/api/login/outLogin', controller.user.outLogin);
+
+  router.resources('configs', '/api/configs', controller.configs);
 };

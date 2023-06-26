@@ -2,9 +2,65 @@
 
 # Semantic versioning
 
+## 1.4.0
+
+`25-06-2023`
+
+- Route to main page as device.
+  ```ts
+  {
+    path: '/',
+    redirect: '/dashboard/device',
+  },
+  ```
+- Create path for configuration page.
+
+  - **config/config.ts**
+    ```ts
+    {
+      name: 'configuration',
+      icon: 'smile',
+      path: '/dashboard/configuration',
+      component: './dashboard/configuration',
+    },
+    ```
+  - Make directory **src/pages/dashboard/configuration**
+  - **index.tsx**
+
+    ```tsx
+    import { PageContainer } from '@ant-design/pro-layout';
+    import { FC } from 'react';
+
+    const ConfigurationPage: FC = () => {
+      return <PageContainer></PageContainer>;
+    };
+
+    export default ConfigurationPage;
+    ```
+
+  - **src/locales/en-US/menu.ts**
+    ```ts
+    'menu.dashboard.configuration': 'Configuration',
+    ```
+  - In stall \*_@ant-design/pro-components_
+  - Create button to create a config (follow **src/pages/list/card-list**).
+    - Copy **utils** folder and **style.less** file
+    - Create a list with temporary data type in **data.d.ts**
+    - Set up the List attributes: rowKey, loading ...
+      - Create temporary service for loading.
+    - Create [modal form](https://procomponents.ant.design/en-US/components/modal-form#modal-forms) component for the new config button.
+    - Handle onClick event for the button
+    - Create newConfig service
+
+## 1.3.1
+
+`25-06-2023`
+
+- Fix webpack error ERR_OSSL_EVP_UNSUPPORTED ny **NODE_OPTIONS=--openssl-legacy-provider**
+
 ## 1.3.0
 
-`24-06-2034`
+`24-06-2023`
 
 - Setup **/dashboard/device** for users to create a device profile.
 
