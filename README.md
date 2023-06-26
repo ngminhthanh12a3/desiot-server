@@ -2,6 +2,20 @@
 
 # Semantic versioning
 
+## 1.5.0
+
+`26-06-2023`
+
+- Create a service store new configuration
+  - Create populate with a certain user.
+  - Create user model and a temporary user document.
+  - Create findOne service for user model.
+- Edit configuration page in routes and menu.
+- Load configurations into the list of the dashboard.
+  - Create index controller of the configs.
+  - Create "find" service for config model.
+  - Update the list when add completely.
+
 ## 1.4.0
 
 `25-06-2023`

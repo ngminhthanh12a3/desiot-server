@@ -24,24 +24,19 @@ class UserController extends Controller {
   }
   async loginAccount() {
     const { password, username, type } = this.ctx.request.body;
+
+    const foundUser = await this.ctx.service.user.findOne({ username });
     const resBody = {
       status: 'error',
       type,
       currentAuthority: 'guest',
     };
-    if (
-      (password === 'ant.design' && username === 'admin') ||
-      (password === 'ant.design' && username === 'user')
-    ) {
-      resBody.status = 'ok';
-      resBody.currentAuthority = username;
-      this.ctx.session.user = {
-        name: username,
-        avatar:
-          'https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png',
-        access: username,
-      };
-    }
+    if (foundUser)
+      if (password === foundUser.password && username === foundUser.username) {
+        resBody.status = 'ok';
+        resBody.currentAuthority = foundUser.access;
+        this.ctx.session.user = foundUser;
+      }
     this.ctx.body = resBody;
   }
 
