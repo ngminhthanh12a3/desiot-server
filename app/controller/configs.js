@@ -6,6 +6,10 @@ class CofigsController extends Controller {
   async index() {
     this.ctx.body = { data: await this.ctx.service.configs.find() };
   }
+  async show() {
+    const { id } = this.ctx.params;
+    this.ctx.body = { data: await this.ctx.service.configs.findOne(id) };
+  }
   async create() {
     const { ctx } = this;
 

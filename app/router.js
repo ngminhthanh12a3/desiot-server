@@ -11,4 +11,5 @@ module.exports = (app) => {
   router.post('/api/login/outLogin', controller.user.outLogin);
 
   router.resources('configs', '/api/configs', controller.configs);
+  router.resources('device', '/api/device', controller.device);
 };

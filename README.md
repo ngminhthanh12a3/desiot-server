@@ -2,6 +2,35 @@
 
 # Semantic versioning
 
+## 1.6.0
+
+`26-06-2023`
+
+- Create the event allowing to click on a config profile.
+  - Forward the location of the window to the ID path URL.
+  - Create **profile** dir in the page of **configuration**.
+  - Config the **config/config.ts**
+  - Change **menu.ts**
+  - Custom the **pageContainer** to display the name of the profile.
+    - Get profile's data by the param.
+    - Create **show** method on **configs** controller.
+    - Create **findOne** method in **configs** service.
+- Create a device tab in the config page **based on src/pages/list/search**.
+  - Config the **config/config.ts** file.
+  - Create the **src/pages/dashboard/profile/device** folder and **index.tsx**.
+  - Modify **menu.ts**.
+- Create a table with add button **based on src/pages/list/table-list**
+- Make a request requiring to create a device with name field.
+  - Set name field in type and modal form.
+  - Create a resources handler in the router of the server. **controller.device**
+  - Create **create** method in the device service.
+    - Modify the Device Model.
+  - Modify ID Param in the **config/config.ts** and Profile tsx.
+  - Update device table when adding and initialization.
+    - Create **findDevice** in the web with **rule** service.
+  - Create the **index** method on **device** controller.
+    - Create **find** method in **device** service. (with query)
+
 ## 1.5.0
 
 `26-06-2023`
