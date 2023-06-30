@@ -41,7 +41,7 @@ class UserController extends Controller {
   }
 
   async outLogin() {
-    this.ctx.session.user = {};
+    this.ctx.session.user = null;
     this.ctx.body = { data: {}, success: true };
   }
 }

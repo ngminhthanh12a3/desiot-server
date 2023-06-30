@@ -8,6 +8,13 @@ class DeviceController extends Controller {
       data: await this.ctx.service.device.find(this.ctx.query),
     };
   }
+
+  async show() {
+    this.ctx.body = {
+      data: await this.ctx.service.device.findOne(this.ctx.query),
+    };
+  }
+
   async create() {
     const deviceData = this.ctx.request.body;
     this.ctx.body = {

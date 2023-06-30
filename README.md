@@ -2,6 +2,27 @@
 
 # Semantic versioning
 
+## 1.7.0
+
+`27-06-2023`
+
+- Handle onClick of a device name.
+  - Navigate to a info page of the device
+- Config **config/config.ts** and **menu.ts**
+- Config PageContainer of the device page.
+- Fix outlogin controller.
+- Pass **filter** to the device page.
+<!-- - Find all device doc to the info page.
+  - Change global style.
+  - Load sidebar content and change its background opacity.
+  - Create a list container
+  - Get root location, and push location when click
+  - Get all devices and change the **filter** param of the **api/device**. -->
+- Hide root route of device.
+  - Create page container of the ifno page.
+  - Get device name and pass it to the title
+  - Create **show** method in **controller.device**
+
 ## 1.6.0
 
 `26-06-2023`
