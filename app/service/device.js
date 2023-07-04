@@ -9,6 +9,9 @@ class DeviceService extends Service {
   async findOne(filter) {
     return Device.findOne(filter).lean().exec();
   }
+  async findOneAndUpdate(filter, update, options = {}) {
+    return Device.findOneAndUpdate(filter, update, options);
+  }
   async create(devData) {
     const newDev = new Device(devData);
     return newDev.save();

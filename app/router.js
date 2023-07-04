@@ -12,4 +12,5 @@ module.exports = (app) => {
 
   router.resources('configs', '/api/configs', controller.configs);
   router.resources('device', '/api/device', controller.device);
+  router.resources('vstorage', '/api/vstorage', controller.vstorage);
 };

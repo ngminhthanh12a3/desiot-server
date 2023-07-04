@@ -2,6 +2,39 @@
 
 # Semantic versioning
 
+## 1.8.0
+
+`30-06-2023`
+
+- Get device ID from the frame.
+  - Create **findOneAndUpdate** method for **device** service.
+  - Update **DESIOT_FRAME** constant.
+- Display **ID** column in the device table with copyable feature.
+- Disable mock of user apis and **waterMarkProps**.
+- S: Get gateway frame and device id.
+  - Change **frameHandler** constants.
+  - Fix **\0** error with Object ID.
+  - Create **updateConnection** method.
+  - Update VPin value with **config_id** and **device_id**.
+  - Get **config_id** from the frame.
+- S: Reconstruct the **frameHandler** constants.
+- S: Create **VStorage** service.
+  - Create **VStorage** model.
+  - Set properties of **config_id**, **type**, **vs_id**, **data**. Set **required** fields.
+- C: Create tab for Virtual Storage in **src/pages/dashboard/configuration/profile**.
+  - Create route for **virtual storage** page and its directory. Also **menu.ts**
+  - Create a table based on **/list/table-list**
+  - Create **Modal form** button.
+  - Set modal form fields. (General VS IDs)
+  - S: Using index with unique of **vs_id** and **config_id** fields.
+- C: Handle Submit of modal form.
+  - S: Create router resource for **vstorage** controller.
+  - Create **create** method on **vstorage** controller and service.
+  - Add user field in the schema of VStorage.
+  - Mutate added data, create **rule** request.
+  - Create **index** method in **vstorage** controller and service.
+  - Create cloumn types for VStorage table
+
 ## 1.7.0
 
 `27-06-2023`

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 const deviceSchema = new Schema({
-  gateway_id: { type: Schema.Types.ObjectId, ref: 'Gateway' },
+  gateway_id: { type: Schema.Types.ObjectId, ref: 'gateway' },
   connection_type: {
     type: Number,
     enum: [0, 1],
