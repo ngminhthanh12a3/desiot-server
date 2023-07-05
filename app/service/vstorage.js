@@ -9,6 +9,9 @@ class VStorageService extends Service {
   async findOne(filter) {
     return await VStorage.findOne(filter);
   }
+  async findOneAndUpdate(filter, data) {
+    return await VStorage.findOneAndUpdate(filter, data);
+  }
   async create(doc) {
     const newVStorage = new VStorage(doc);
     return await newVStorage.save();

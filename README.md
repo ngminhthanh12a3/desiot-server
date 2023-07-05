@@ -2,6 +2,26 @@
 
 # Semantic versioning
 
+## 1.9.0
+
+`30-06-2023`
+
+<!-- - Store **vs_data** to **VStorage** and create **findOneAndUpdate** method in the service.
+- Create dashboard label UI for display VSData.
+  - Create UI tab in Profile.
+  - Add properties to **config.ts** and **menu.ts**
+  - Create **UI** component page and return **ReactGridLayout**.
+  - Install **npm i react-grid-layout lodash**
+  - Return No Dragging Example, wrapped in a Proform to allow editting.
+  - Create edit mode button and allow resizing and dragging when allowing editting.
+  - Apply **Drag From Outside** example when in editable mode.
+  - Create a drag item list, using layout, sidebar, and content components.
+    - Install **rc-virtual-list** -->
+
+- Remake the UI with form and Layout structure for the **toolbox** example.
+  - Create form, pass editable mode.
+  - Set drag and drop to add new item. Fix draggable bug for new item.
+
 ## 1.8.0
 
 `30-06-2023`
