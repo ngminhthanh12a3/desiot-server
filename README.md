@@ -2,6 +2,38 @@
 
 # Semantic versioning
 
+1.10.0
+
+`05-07-2023`
+
+- Create a labal UI in toolbox in a **Space** component.
+  - Crate label TSX component and cover it by a draggable container.
+  - Remove padding for the first card child.
+  - Get dropping element parameters from UI useModel.
+  - Set dropping item when onDragStart.
+  <!-- - Set UID by adding layouts length prefix. -->
+  - Remove Defaule layout generator.
+  - Update keys of layout items when **onChangeLayout** happened. -> Using **counter** method instead.
+  - Add **type** attribute when the element being dropped.
+  - Update minw, maxw, minh, maxh attributes of an item when it's on dropping.
+  - Generate DOM for the label UI component.
+    - Create UIDOMContainer TSX component.
+    - Fix toolbox selectable by adding more css.
+    - Rener DOM for editable UI component.
+    - Fix **i** prop with hyphen. ex label-1.
+    - Create editable DOM container in editabltDOMGenerator.
+    - Separate the DOM generator.
+    - Edit DOM container with dropdown menu when hover it.
+    - Add **delete** menu in the dropdown and handle **onClick** event.
+      - Restructoure the dropDown menu to a FC.
+      - Run delete method in useModel. By pass reate states to useModel('UI');
+    - Update layout data of form when **onLayoutChange**.
+      - Set items depend on Form Change and view form **onFinish**.
+      - Set items based on **form.setFieldValue**.
+    - Update Items when **onFinish**
+    - Remove **dNd** z-index when exit editable mode. Move **editable** to UI model.
+    - Move counter to form.
+
 ## 1.9.0
 
 `30-06-2023`

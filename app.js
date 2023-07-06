@@ -1,6 +1,5 @@
 const { Application } = require('egg');
 const { FrameHandler } = require('./lib/src');
-
 // app.js or agent.js
 class AppBootHook {
   /**
