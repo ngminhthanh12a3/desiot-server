@@ -4,13 +4,14 @@
  * @param {Egg.Application} app - egg application
  */
 module.exports = (app) => {
-  const { router, controller } = app;
+  const { router, controller, middleware } = app;
   router.get('/', controller.home.index);
   router.get('/api/currentUser', controller.user.currentUser);
   router.post('/api/login/account', controller.user.loginAccount);
   router.post('/api/login/outLogin', controller.user.outLogin);
-
-  router.resources('configs', '/api/configs', controller.configs);
-  router.resources('device', '/api/device', controller.device);
-  router.resources('vstorage', '/api/vstorage', controller.vstorage);
+  const checkUser = middleware.checkUser({});
+  router.resources('configs', '/api/configs', checkUser, controller.configs);
+  router.resources('device', '/api/device', checkUser, controller.device);
+  router.resources('vstorage', '/api/vstorage', checkUser, controller.vstorage);
+  router.resources('ui', '/api/UI', checkUser, controller.ui);
 };

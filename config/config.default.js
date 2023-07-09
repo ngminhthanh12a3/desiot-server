@@ -18,7 +18,7 @@ module.exports = (appInfo) => {
   config.keys = appInfo.name + '_1687411685289_2083';
 
   // add your middleware config here
-  config.middleware = [];
+  // config.middleware = ['checkUser'];
 
   const {
     DESIOT_MQTT_CLIENT_HOST,

@@ -19,6 +19,11 @@ const deviceSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'config',
   },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'user',
+    required: true,
+  },
 });
 
 const Device = mongoose.model('device', deviceSchema);

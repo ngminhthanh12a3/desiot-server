@@ -2,7 +2,45 @@
 
 # Semantic versioning
 
-1.10.0
+## 1.11.0
+
+`06-07-2023`
+
+- Get UI data from server.
+  - Use config ID from UI model, and update config_id when access to config profile.
+- Display all UI from database in tab form.
+  - Create UI **find** service in web and controller(index) in server.
+  - Use user_id for config **find** method.
+  - Create **name** field for ModalForm.
+  - Create request for adding UI and **create** controller. (With config_id)
+  - Concat UI items with key, labels, childrend.
+- Mount a middleware for check user id. -> configs, device, vStorate, UI
+
+  - Add **user** to device model
+
+- Create route path for UI_id in **config.ts** and **menu.ts**
+  - Handle tab key to redirect.
+- Create default data for UI: items, layout, counter
+  - Get UI data by ui_id and create **show** controller and service.
+  - Create schema model for UI: items, layout, and counter.
+  - Save UI data when submit by create request.
+  - Create update controller and service.
+  - Create handler for **add** action. Use Modal form with open and onOpenChange method.
+  - Chage Reset button to set fields base in the initials.
+  - Should put editable mode in separate route and remove setEditable in child components.
+    - handle UI tabs error by **onTabClick**.
+    - Create ReadOnlyUIDashboard route.
+    - Return RGL with non-editable property. Push to editable route when clicking Edit button.
+  - Create edit route in **config.ts** and **menu.ts**.
+    - Return a editable layout and pass editable mode.
+    - Submit form data by run method of useRequest.
+    - Display editable items by its type.
+    - Display title of an editable item by add more data to its configurations.
+    - Add setting button to the DOM container to edit item configuration.
+    - Place the modal form in the layout of the editable dashboard.
+    - Use modal form to edit **title** and **storage** of the item.
+
+## 1.10.0
 
 `05-07-2023`
 

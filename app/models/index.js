@@ -3,4 +3,5 @@ module.exports = {
   Config: require('./config'),
   User: require('./user'),
   VStorage: require('./vStorage'),
+  UI: require('./ui'),
 };

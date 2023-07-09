@@ -16,7 +16,8 @@ class DeviceController extends Controller {
   }
 
   async create() {
-    const deviceData = this.ctx.request.body;
+    const filter = this.ctx.query;
+    const deviceData = { ...this.ctx.request.body, ...filter };
     this.ctx.body = {
       data: await this.ctx.service.device.create(deviceData),
     };

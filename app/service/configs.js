@@ -3,11 +3,11 @@ const { Config } = require('../models');
 const Service = require('egg').Service;
 
 class ConfigsService extends Service {
-  async find() {
-    return await Config.find().lean().exec();
+  async find(filter) {
+    return await Config.find(filter);
   }
-  async findOne(_id) {
-    return await Config.findOne({ _id }).lean().exec();
+  async findOne(filter) {
+    return await Config.findOne(filter);
   }
   async createOne(config) {
     const newConfig = new Config(config);

@@ -12,7 +12,7 @@ class VStorageController extends Controller {
   }
   async create() {
     const { body } = this.ctx.request;
-    const { _id: user } = this.ctx.session.user;
+    const { user } = this.ctx.query;
     this.ctx.body = {
       data: await this.ctx.service.vstorage.create({ ...body, user }),
     };
