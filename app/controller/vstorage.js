@@ -17,6 +17,14 @@ class VStorageController extends Controller {
       data: await this.ctx.service.vstorage.create({ ...body, user }),
     };
   }
+
+  async show() {
+    const { body } = this.ctx.request;
+    const { user } = this.ctx.query;
+    this.ctx.body = {
+      data: await this.ctx.service.vstorage.findOne({ ...body, user }),
+    };
+  }
 }
 
 module.exports = VStorageController;

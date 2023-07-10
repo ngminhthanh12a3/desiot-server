@@ -2,6 +2,32 @@
 
 # Semantic versioning
 
+## 1.12.0
+
+`09-07-2023`
+
+- Fix bug for load all UI. Pass config_id for fixing and make it a separate service.
+- Create UI tab for device profile page.
+- Make device route public. Position a layout has sidebar.
+- Create a tab containing device list.
+- Set default activeKey when list loaded.
+- Display RGL UI on the layout of device info page.
+- Get all UI items from db by service.
+- Redirect to Ui tab when access to a profile. **config.ts** and **menu.ts**.
+  - Create UI tabs for each UI dashboard.
+  - Set activeKey and children for tabs when **onSuccess**.
+  - Pass UI dashboard to each tab when request successfully.
+- Config DOM generator for Run Items.
+  - Config styles for container.
+- Get initial content value for item.
+  - Get initial method and curSynDev from VSSync model.
+  - Create VSSync model.
+  - Return initial VS content by manually run a request.
+  - Set curSyncDev when access to profile page.
+  - Create **show** method in vs torate controller.
+  - Use EvenEmitter of **events** to synchonize with VS update.
+  - Using **destroyInactivePane** :(.
+
 ## 1.11.0
 
 `06-07-2023`
