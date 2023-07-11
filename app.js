@@ -1,5 +1,6 @@
 const { Application } = require('egg');
 const { FrameHandler } = require('./lib/src');
+const { DBWatchForChange } = require('./lib/utils');
 // app.js or agent.js
 class AppBootHook {
   /**
@@ -29,6 +30,10 @@ class AppBootHook {
         const hFrame = new FrameHandler(payloadU8Buf, ctx);
         hFrame.parseFrame();
       });
+    });
+
+    this.app.on('egg-mongoose-connected', (mongooseConnection) => {
+      DBWatchForChange.DBWatchForChangeSetup(this.app);
     });
   }
 

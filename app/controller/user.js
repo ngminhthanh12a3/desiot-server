@@ -5,12 +5,13 @@ const { Controller } = require('egg');
 class UserController extends Controller {
   async currentUser() {
     const { user } = this.ctx.session;
-    if (user)
+    if (user) {
+      const { password, ...restUser } = user;
       this.ctx.body = {
         success: true,
-        data: user,
+        data: restUser,
       };
-    else {
+    } else {
       this.ctx.status = 401;
       this.ctx.body = {
         data: {

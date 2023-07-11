@@ -44,6 +44,7 @@
   "license": "MIT",
   "workspaces": [
     "lib/plugin/egg-mqttclient",
-    "lib/plugin/egg-mongoose"
+    "lib/plugin/egg-mongoose",
+    "lib/plugin/egg-socketio"
   ]
 }

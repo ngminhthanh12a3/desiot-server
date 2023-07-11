@@ -18,7 +18,7 @@ interface EggMongooseConfig {
 
 declare module 'egg' {
   interface Application {
-    mongoose: Promise<typeof mongoose>;
+    mongoose: typeof mongoose;
   }
   interface EggAppConfig {
     mongoose: EggMongooseConfig;

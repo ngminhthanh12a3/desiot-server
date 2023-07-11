@@ -17,4 +17,8 @@ module.exports = {
   security: {
     enable: false,
   },
+  socketio: {
+    enable: true,
+    path: path.join(__dirname, '../lib/plugin/egg-socketio'),
+  },
 };

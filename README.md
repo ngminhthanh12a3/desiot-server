@@ -2,6 +2,68 @@
 
 # Semantic versioning
 
+## 1.13.0
+
+`10-07-2023`
+
+- Synchonize with VS of server by socket and socket client.
+  - Install socket.io and socket.io-client.
+  - Create plugin egg-socketio.
+- Server Configs:
+  - Edit **plugin.js**.
+  - Add general configs in plugin dir and app dir(**config.default.js**).
+  - Add **app.js** in plugin dir.
+  - Test **server** event.
+    ```js
+    /**
+     *
+     * @param {Egg.Application} app
+     */
+    module.exports = (app) => {
+      app.once('server', (server) => console.log(server));
+    };
+    ```
+  - Add default socket.io config with dev client **localhost:8000**
+  - Add **index.d.ts** for namespace egg -> Application.
+- Client configs:
+  - Connect to socket client when user id is exist.
+  - Change **proxy.ts**.
+- Fix **currentUser** controller send user password.
+- Test mongoose wactch. Sample Update change stream:
+  ```js
+  const pipeline = [{ $match: { operationType: 'update' } }];
+  const options = {
+    fullDocument: 'updateLookup',
+  };
+  VStorage.watch(pipeline, options).on('change', (data) =>
+    console.log('VStorage', data)
+  );
+  ```
+  ```ts
+  {
+  _id: {
+    _data: '8264AC9C31000000022B022C0100296E5A100444E0A1E75AAB409D9C20E655B97AACB846645F6964006464AA1D33CF45EC0504D5287E0004'
+  },
+  operationType: 'update',
+  clusterTime: new Timestamp({ t: 1689033777, i: 2 }),
+  wallTime: 2023-07-11T00:02:57.952Z,
+  ns: { db: 'desiotapp', coll: 'vstorages' },
+  documentKey: { _id: new ObjectId("64aa1d33cf45ec0504d5287e") },
+  updateDescription: {
+    updatedFields: { 'data.649f77183ffebb1238095b35': 20004 },
+    removedFields: [],
+    truncatedArrays: []
+    }
+  }
+  ```
+- Start DB watch for change when DB initialized completely.
+- Nority change to client through socketio.
+  - Emit to client throuth user_id.
+  - Loop to check each **updatedFields** has **data.** pattern.
+- Client:
+  - Handle the data packet in general way.
+- Remove unused locales and reconfig routes in **config.ts**.
+
 ## 1.12.0
 
 `09-07-2023`

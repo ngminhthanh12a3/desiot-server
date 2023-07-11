@@ -60,6 +60,7 @@ module.exports = (appInfo) => {
       httpOnly: true,
       encrypt: true,
     },
+    socketio: {},
   };
 
   return {
