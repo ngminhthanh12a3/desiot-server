@@ -1,0 +1,12 @@
+services:
+  desiot-server:
+    image: desiot-server
+    build:
+      context: ./
+    restart: on-failure
+    env_file:
+      - ./.env
+networks:
+  default:
+    name: iot-services_netApplication
+    external: true

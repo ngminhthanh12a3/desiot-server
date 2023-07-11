@@ -2,6 +2,22 @@
 
 # Semantic versioning
 
+## 1.14.0
+
+- Create ENV for CLIENT URL (**DESIOT_CLIENT_URL**).
+- Using docker compose configs to run the server.
+
+  - Create Makefile contain dev scrips (**dev-up**) for docker compose run.
+  - Create docker-compose.yml and docker-compose.dev.yml
+  - Set up configs for desiot-server service. (image, build.context,...)
+  - Create Dockerfile-dev.
+  - Add .dockerignore.
+
+- Config PWA mode for client.
+  - Enable pwa in **defaultSettings.ts**.
+  - Add **manifest.json** to public dir.
+  - Edit **document.ejs**.
+
 ## 1.13.0
 
 `10-07-2023`

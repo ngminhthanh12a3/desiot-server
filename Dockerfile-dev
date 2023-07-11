@@ -1,0 +1,18 @@
+FROM node:18.14.2
+
+WORKDIR /mern-app/server
+
+COPY package.json .
+# copy all component
+COPY . .
+RUN npm i --force
+RUN npm i --workspaces --force
+
+RUN ls
+
+# Listen port.
+ARG PORT
+EXPOSE $PORT
+
+# Run CMD.
+CMD ["npm", "run", "dev"]

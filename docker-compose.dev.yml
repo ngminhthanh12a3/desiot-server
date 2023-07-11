@@ -1,0 +1,13 @@
+services:
+  desiot-server:
+    build:
+      dockerfile: Dockerfile-dev
+      args:
+        PORT: ${PORT}
+    ports:
+      - 7001:7001
+    command: npm run dev
+    # bind mount
+    volumes:
+      - ./:/mern-app/server/
+      - /mern-app/server/node_modules
