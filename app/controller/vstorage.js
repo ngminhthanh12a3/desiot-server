@@ -19,10 +19,23 @@ class VStorageController extends Controller {
   }
 
   async show() {
-    const { body } = this.ctx.request;
-    const { user } = this.ctx.query;
+    const { id: _id } = this.ctx.params;
+    const filter = this.ctx.query;
     this.ctx.body = {
-      data: await this.ctx.service.vstorage.findOne({ ...body, user }),
+      data: await this.ctx.service.vstorage.findOne({ _id, ...filter }),
+    };
+  }
+
+  async update() {
+    const filter = this.ctx.query;
+    const { id: _id } = this.ctx.params;
+    const data = this.ctx.request.body;
+    const foundData = await this.ctx.service.vstorage.findOneAndUpdate(
+      { _id, ...filter },
+      data
+    );
+    this.ctx.body = {
+      data: foundData,
     };
   }
 }

@@ -6,7 +6,8 @@ module.exports = (options) => {
    * @param {any} next nexy
    */
   async function checkUser(ctx, next) {
-    if (Object.keys(ctx.session.user).length) {
+    const { user = {} } = ctx.session;
+    if (Object.keys(user).length) {
       const { _id: user } = ctx.session.user;
       ctx.query.user = user;
       await next();

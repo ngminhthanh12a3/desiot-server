@@ -2,7 +2,25 @@
 
 # Semantic versioning
 
+## 1.15.0
+
+`12-07-2023`
+
+- Create UI toolbox for switch component.
+  - Setup default params to **DESIoT_DefaultUIComponentParams.ts**, **DESIoT_ItemDefaultConfig.ts**, and **DESIoT_AdditionalAttsOfDroppingItem.ts**.
+  - Setup render component in **DOMGenerators.tsx** and **RunDOMGenerator.tsx**.
+  - Create **VSUpdate** in **VSSync** model to update VS by using UI components.
+  - Create **update** controller of VStorage.
+  - Fix bug in **findOne** method of VStorage controller.
+- Synchronize to device in **watch for change** method.
+  - Send sync by class method.
+    - Frame type : |H1|H2|CMD|DATA_LENGTH|CONNECT_TYPE|CONNECT_ID|DEVICE_DATA|T1|T2|CRC|.
+- Fix **checkUser** bug.
+- Fix **ItemDropdownModalForm** bug: not updating value when it closed.
+
 ## 1.14.0
+
+`11-07-2023`
 
 - Create ENV for CLIENT URL (**DESIOT_CLIENT_URL**).
 - Using docker compose configs to run the server.
