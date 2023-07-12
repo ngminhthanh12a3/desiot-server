@@ -2,6 +2,12 @@
 
 # Semantic versioning
 
+## 1.15.1
+
+`12-07-2023`
+
+- Fix **vs_type** bug.
+
 ## 1.15.0
 
 `12-07-2023`
