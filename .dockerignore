@@ -18,4 +18,3 @@ Dockerfile-dev
 docker-compose.yml
 docker-compose.dev.yml
 .dockerignore
-Makefile

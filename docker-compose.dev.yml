@@ -6,7 +6,7 @@ services:
         PORT: ${PORT}
     ports:
       - 7001:7001
-    command: npm run dev
+    command: bash -c "(cd ./lib/src/chacha20poly1305/c_files/ && make clean && make all) && npm run dev"
     # bind mount
     volumes:
       - ./:/mern-app/server/

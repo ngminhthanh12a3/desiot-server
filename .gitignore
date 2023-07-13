@@ -14,3 +14,5 @@ run/
 typings/
 .nyc_output/
 .env
+*.o
+lib/src/chacha20poly1305/c_files/Binary

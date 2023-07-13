@@ -2,6 +2,17 @@
 
 # Semantic versioning
 
+## 1.16.0
+
+`13-07-2023`
+
+- Add encryption method to frame handler and execute it when the frame parsed.
+  - Update docker file for installing gcc compiler.
+  - Add **c_files**.
+  - Add execute handler.
+  - Rebuild the server container.
+- Create **PageContainer** content including copyable config_id.
+
 ## 1.15.1
 
 `12-07-2023`

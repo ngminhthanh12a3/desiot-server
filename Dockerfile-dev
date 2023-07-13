@@ -7,12 +7,13 @@ COPY package.json .
 COPY . .
 RUN npm i --force
 RUN npm i --workspaces --force
-
-RUN ls
+RUN apt update
+RUN apt install build-essential
+# RUN ["/bin/bash", "-c", "(cd ./lib/src/chacha20poly1305/c_files/ && make clean && make all)"]
 
 # Listen port.
 ARG PORT
 EXPOSE $PORT
 
 # Run CMD.
-CMD ["npm", "run", "dev"]
+CMD ["(cd ./lib/src/chacha20poly1305/c_files/ && make clean && make all)", "&&", "npm", "run", "dev"]
