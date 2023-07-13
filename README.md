@@ -2,6 +2,13 @@
 
 # Semantic versioning
 
+## 1.17.0
+
+`13-07-2023`
+
+- Encrypt data when synchozine to device.
+  - Encrypt before CRC check.
+
 ## 1.16.0
 
 `13-07-2023`

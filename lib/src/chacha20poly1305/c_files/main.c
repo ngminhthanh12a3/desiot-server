@@ -40,6 +40,13 @@ int main(int argc, char **argv)
     hexStrToU8Array(argv[5], dataFrame.data_len_arr, sizeof(dataFrame.data_len_arr)); // data len
     hexStrToU8Array(argv[5], dataFrame.data_len_arr, dataFrame.data_len + sizeof(dataFrame.data_len_arr)); // tag + data
 
+    if(argv[1][0] != DECRYPT)
+    {
+        // shift plaintext to add virtual tag size
+        memmove(dataFrame.text, dataFrame.tag, dataFrame.data_len);
+        dataFrame.data_len += sizeof(dataFrame.tag); // add tagsize
+    }
+
     dataFrame.data_len -= 16; // sub tagsize
 
     data_out_t dataOut = {.data_len = dataFrame.data_len, };
