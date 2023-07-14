@@ -2,6 +2,12 @@
 
 # Semantic versioning
 
+## 1.17.2
+
+`14-07-2023`
+
+- Use loading and makefile.
+
 ## 1.17.1
 
 `14-07-2023`
