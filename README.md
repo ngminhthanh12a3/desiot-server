@@ -2,6 +2,12 @@
 
 # Semantic versioning
 
+## 1.17.1
+
+`14-07-2023`
+
+- Device UI don't request to set VS data when rerender.
+
 ## 1.17.0
 
 `13-07-2023`
