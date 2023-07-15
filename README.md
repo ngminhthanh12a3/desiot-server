@@ -2,6 +2,14 @@
 
 # Semantic versioning
 
+## 1.17.3
+
+`15-07-2023`
+
+- Handle no request when UI has no **vs_id**.
+- Change client **navTheme** to light.
+- Disable control UI when it has no **vs_id**.
+
 ## 1.17.2
 
 `14-07-2023`
