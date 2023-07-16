@@ -2,6 +2,14 @@
 
 # Semantic versioning
 
+## 1.17.4
+
+`16-07-2023`
+
+- Change content **empty** display.
+- Add **destroyInactiveTabPane** to UI tabs of Configuration and Device.
+- Add **data.data** condition to avoid undefined.
+
 ## 1.17.3
 
 `15-07-2023`
