@@ -2,6 +2,44 @@
 
 # Semantic versioning
 
+## 1.18.0
+
+`26-07-2023`
+
+- Edit page login.
+  - Remove **login with**.
+  - Disable phone login.
+- Change .svg, .ico, and .png file in **public** folder.
+- Create Delete button for each VS row.
+  - Delete VS by a method
+- Create **destroy** in **vstorage** controller.
+  - Handle **onSuccess** event in the web.
+- Create **delete** method for UI tabs.
+  - Edit type of UI service **findUI** and **createUIRun**
+  - Create **destroy** in **ui** controller.
+  - Create **findOneAndDelete** service in server.
+- Create Delete button for each **device** row.
+  - Create **destroy** in **device** controller.
+  - Unset all VS has data field of **device id** with filter of **config_id** and **user**.
+- Create a drop down menu containing a delete button in config profile.
+  - Create **destroy** controller in **config** controller.
+  - Delete many for **device**, **vstorage**, and **ui** model when a config deleted (in **post** middleware and filter of config_id and user)
+  - Redirect to config path
+- Fix Error of null device list.
+- Create **Float** data type for **Virtual Storage**.
+  - Update ProformSelect.
+  - Update **vstorage** model.
+  - Set **vstorage** select to disabled if it is used.
+  - Change display of **valueEnum** of vstorage type
+  - Change update method of vstorage in **frameHandler** and **DevSyncFrame**.
+  - Fix undefined bug for **devData** in **DevSyncFrame**.
+- Move data fetching to the model in a centralized way.
+  - Check vs_type of fullDocument. (update in **DBWatchForChange**)
+- Handle **DESIOT_CMD_READ_VIRTUAL_STORAGE** CMD.
+- Update model. with **.lean().exec()**.
+- Change RunDom useEffect using event only.
+- Not use **useRequest** in model for multiple component.
+
 ## 1.17.4
 
 `16-07-2023`

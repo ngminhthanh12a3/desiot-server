@@ -16,6 +16,9 @@ class UIService extends Service {
   async findOneAndUpdate(filter, uppdate) {
     return await UI.findOneAndUpdate(filter, uppdate);
   }
+  async findOneAndDelete(filter) {
+    return await UI.findOneAndDelete(filter);
+  }
 }
 
 module.exports = UIService;

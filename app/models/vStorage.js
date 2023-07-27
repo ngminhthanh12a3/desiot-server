@@ -17,7 +17,7 @@ const vStorageSchema = new Schema({
   },
   type: {
     type: Number,
-    enum: [0],
+    enum: [0, 1],
     required: true,
   },
   vs_id: {
@@ -29,6 +29,7 @@ const vStorageSchema = new Schema({
   data: {
     type: Map,
     of: Number,
+    default: {},
   },
 });
 

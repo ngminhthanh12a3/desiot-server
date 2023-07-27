@@ -34,6 +34,13 @@ class CofigsController extends Controller {
         data: result,
       };
   }
+
+  async destroy() {
+    const { id: _id = '' } = this.ctx.params;
+    this.ctx.body = {
+      data: await this.ctx.service.configs.findOneAndDelete({ _id }),
+    };
+  }
 }
 
 module.exports = CofigsController;

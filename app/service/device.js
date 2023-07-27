@@ -16,6 +16,20 @@ class DeviceService extends Service {
     const newDev = new Device(devData);
     return newDev.save();
   }
+  async findOneAndDelete(filter) {
+    const deletedDevice = await Device.findOneAndDelete(filter);
+    if (!!deletedDevice) {
+      const VSFilter = {
+        user: deletedDevice.user,
+        config_id: deletedDevice.config_id,
+      };
+      this.ctx.service.vstorage.updateMany(VSFilter, {
+        $unset: { [`data.${deletedDevice._id}`]: 1 },
+      });
+    }
+
+    return deletedDevice;
+  }
 }
 
 module.exports = DeviceService;

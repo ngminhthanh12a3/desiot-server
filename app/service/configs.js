@@ -13,6 +13,9 @@ class ConfigsService extends Service {
     const newConfig = new Config(config);
     return await newConfig.save();
   }
+  async findOneAndDelete(filter) {
+    return await Config.findOneAndDelete(filter);
+  }
 }
 
 module.exports = ConfigsService;

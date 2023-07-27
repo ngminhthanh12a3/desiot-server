@@ -22,6 +22,12 @@ class DeviceController extends Controller {
       data: await this.ctx.service.device.create(deviceData),
     };
   }
+  async destroy() {
+    const { id: _id = '' } = this.ctx.params;
+    this.ctx.body = {
+      data: await this.ctx.service.device.findOneAndDelete({ _id }),
+    };
+  }
 }
 
 module.exports = DeviceController;

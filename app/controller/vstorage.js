@@ -38,6 +38,13 @@ class VStorageController extends Controller {
       data: foundData,
     };
   }
+
+  async destroy() {
+    const { id: _id = '' } = this.ctx.params;
+    this.ctx.body = {
+      data: await this.ctx.service.vstorage.findOneAndDelete({ _id }),
+    };
+  }
 }
 
 module.exports = VStorageController;

@@ -46,6 +46,12 @@ class UIController extends Controller {
       ),
     };
   }
+  async destroy() {
+    const { id: _id = '' } = this.ctx.params;
+    this.ctx.body = {
+      data: await this.ctx.service.ui.findOneAndDelete({ _id }),
+    };
+  }
 }
 
 module.exports = UIController;
