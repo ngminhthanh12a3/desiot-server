@@ -2,6 +2,12 @@
 
 # Semantic versioning
 
+## 1.19.0
+
+`29-07-2023`
+
+- Change default **TRAILERS** to make it completely different from the default **HEADERS**. (0x70, 0x71)
+
 ## 1.18.0
 
 `26-07-2023`
