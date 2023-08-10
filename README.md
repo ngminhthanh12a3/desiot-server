@@ -2,6 +2,16 @@
 
 # Semantic versioning
 
+## 1.19.1
+
+`11-08-2023`
+
+- Change run scripts in server.
+- Update **/src/locales/en-US/pages.ts** in client.
+- Fix **(node:16510) Warning: Accessing non-existent property 'FrameHandler' of module exports inside circular dependency**
+  - **app.js**
+  - **server/lib/src/frameHandler/index.js**
+
 ## 1.19.0
 
 `29-07-2023`

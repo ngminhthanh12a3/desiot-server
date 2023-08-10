@@ -22,10 +22,10 @@
     "node": ">=16.0.0"
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-desiot",
+    "start": "egg-scripts start --daemon --title=egg-server-desiot --sticky",
     "stop": "egg-scripts stop --title=egg-server-desiot",
-    "dev": "egg-bin dev",
-    "debug": "egg-bin debug",
+    "dev": "egg-bin dev --sticky",
+    "debug": "egg-bin debug --sticky",
     "test": "npm run lint -- --fix && npm run test-local",
     "test-local": "egg-bin test",
     "cov": "egg-bin cov",
