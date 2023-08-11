@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdint.h>
+#include <time.h>
 
 #include "rfc7539.h"
 
@@ -52,6 +53,10 @@ int main(int argc, char **argv)
     data_out_t dataOut = {.data_len = dataFrame.data_len, };
 
     chacha20poly1305_ctx ctx;
+
+    struct timespec begin, end;
+    timespec_get(&begin, TIME_UTC);
+
     rfc7539_init(&ctx, key, nonce);
     rfc7539_auth(&ctx, aad, sizeof(aad));
 
@@ -62,6 +67,15 @@ int main(int argc, char **argv)
 
     rfc7539_finish(&ctx, sizeof(aad), dataFrame.data_len, dataOut.actual_tag);
 
+    timespec_get(&end, TIME_UTC);
+
+    //print time
+    long nTime = end.tv_nsec - begin.tv_nsec;
+    uint8_t *u8NTime = (uint8_t*)&nTime;
+    for(size_t i = 0;i < sizeof(nTime);i++)
+        printf("%02X", u8NTime[i]);
+
+    // print tag and data
     for (size_t i = 0; i < dataFrame.data_len + sizeof(dataOut.actual_tag) + 2; i++)
         printf("%02X", dataOut.actual_tag[i]);
 
