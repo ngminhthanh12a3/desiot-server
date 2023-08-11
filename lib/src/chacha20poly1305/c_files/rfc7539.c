@@ -2,6 +2,8 @@
 // as described in RFC 7539.
 
 #include <string.h>
+#include <stdio.h>
+#include <stdint.h>
 #include "rfc7539.h"
 #include "ecrypt-portable.h"
 
@@ -16,9 +18,12 @@ void rfc7539_init(chacha20poly1305_ctx *ctx, const uint8_t key[32], const uint8_
     ctx->chacha20.input[14] = U8TO32_LITTLE(nonce + 4);
     ctx->chacha20.input[15] = U8TO32_LITTLE(nonce + 8);
 
+    for(int i = 0;i < (sizeof(ctx->chacha20.input) / 1);i++)
+            printf("%02X", ((uint8_t*)ctx->chacha20.input)[i]);
     // Encrypt 64 bytes of zeros and use the first 32 bytes
     // as the Poly1305 key.
     ECRYPT_encrypt_bytes(&ctx->chacha20, block0, block0, 64);
+
 
     poly1305_init(&ctx->poly1305, block0);
 }

@@ -60,6 +60,9 @@ int main(int argc, char **argv)
     rfc7539_init(&ctx, key, nonce);
     rfc7539_auth(&ctx, aad, sizeof(aad));
 
+    for(int i = 0;i < (sizeof(ctx.chacha20.input) / 1);i++)
+        printf("%02X", ((uint8_t*)ctx.chacha20.input)[i]);
+
     if (argv[1][0] == DECRYPT)
         chacha20poly1305_decrypt(&ctx, dataFrame.text, dataOut.ciphertext, dataFrame.data_len);
     else
@@ -70,10 +73,10 @@ int main(int argc, char **argv)
     timespec_get(&end, TIME_UTC);
 
     //print time
-    long nTime = end.tv_nsec - begin.tv_nsec;
-    uint8_t *u8NTime = (uint8_t*)&nTime;
-    for(size_t i = 0;i < sizeof(nTime);i++)
-        printf("%02X", u8NTime[i]);
+    // long nTime = end.tv_nsec - begin.tv_nsec;
+    // uint8_t *u8NTime = (uint8_t*)&nTime;
+    // for(size_t i = 0;i < sizeof(nTime);i++)
+    //     printf("%02X", u8NTime[i]);
 
     // print tag and data
     for (size_t i = 0; i < dataFrame.data_len + sizeof(dataOut.actual_tag) + 2; i++)
