@@ -2,6 +2,12 @@
 
 # Semantic versioning
 
+## 1.21.1
+
+`23-08-2023`
+
+- String synchronization bug: no data length.
+
 ## 1.20.0
 
 `23-08-2023`
