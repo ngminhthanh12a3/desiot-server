@@ -2,6 +2,18 @@
 
 # Semantic versioning
 
+## 1.20.0
+
+`23-08-2023`
+
+- Create **String** data type for **Virtual Storage**.
+  - [x] Update ProformSelect.
+  - [x] Update **vstorage** model. (for data + type)
+  - Set **vstorage** select to disabled if it is used.
+  - [ ] Change display of **valueEnum** of vstorage type
+  - [ ] Change update method of vstorage in **frameHandler** and **DevSyncFrame**.
+  - Fix undefined bug for **devData** in **DevSyncFrame**.
+
 ## 1.19.1
 
 `11-08-2023`

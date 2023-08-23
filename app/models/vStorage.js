@@ -17,7 +17,7 @@ const vStorageSchema = new Schema({
   },
   type: {
     type: Number,
-    enum: [0, 1],
+    enum: [0, 1, 2],
     required: true,
   },
   vs_id: {
@@ -28,7 +28,7 @@ const vStorageSchema = new Schema({
   },
   data: {
     type: Map,
-    of: Number,
+    of: Schema.Types.Mixed,
     default: {},
   },
 });
