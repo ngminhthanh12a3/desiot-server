@@ -9,6 +9,7 @@ module.exports = (app) => {
   router.get('/api/currentUser', controller.user.currentUser);
   router.post('/api/login/account', controller.user.loginAccount);
   router.post('/api/login/outLogin', controller.user.outLogin);
+  router.post('/api/dsp/digital_filtering', controller.dsp.digital_filtering);
   const checkUser = middleware.checkUser({});
   router.resources('configs', '/api/configs', checkUser, controller.configs);
   router.resources('device', '/api/device', checkUser, controller.device);

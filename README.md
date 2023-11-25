@@ -2,6 +2,33 @@
 
 # Semantic versioning
 
+## 1.23.0
+
+`22-11-2023`
+
+- New VS type for Float Array
+  - Client UI
+- New filtering graph UI
+  - widget
+  - widget initial data
+  - Model UI config
+  - RunDOM Filtering Graph: client/src/pages/device/info/components/RunDOMFilteringGraph.tsx
+- ~~Sampling enable mode.~~
+  - En button
+- Filter button: sampling, filtering, filtered
+  - Filterd Status
+  - Server '/api/dsp/digital_filtering' API
+- Create DSP Python server
+  - Run DSP algorithm
+    - extract_ppg_data method
+    - TIME NOISE
+
+## 1.22.0
+
+`03-10-2023`
+
+- 0.0.0@deslab-fota-fpga
+
 ## 1.21.1
 
 `23-08-2023`

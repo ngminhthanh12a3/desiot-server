@@ -17,7 +17,7 @@ const vStorageSchema = new Schema({
   },
   type: {
     type: Number,
-    enum: [0, 1, 2],
+    enum: [0, 1, 2, 3],
     required: true,
   },
   vs_id: {

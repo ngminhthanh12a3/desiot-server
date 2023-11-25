@@ -25,10 +25,25 @@ class AppBootHook {
     const ctx = this.app.createAnonymousContext();
     this.app.mqttclient.on('connect', () => {
       this.app.mqttclient.on('message', (topic, payload) => {
-        const { FrameHandler } = require('./lib/src');
-        const payloadU8Buf = new Uint8Array(payload);
-        const hFrame = new FrameHandler(payloadU8Buf, ctx);
-        hFrame.parseFrame();
+        switch (topic) {
+          case 'test/gateway_publish': {
+            const { FrameHandler } = require('./lib/src');
+            const payloadU8Buf = new Uint8Array(payload);
+            const hFrame = new FrameHandler(payloadU8Buf, ctx);
+            hFrame.parseFrame();
+            break;
+          }
+          case 'test/emotibit_publish':
+            {
+              const { FrameHandler } = require('./lib/src');
+              const payloadU8Buf = new Uint8Array(payload);
+              const hFrame = new FrameHandler(payloadU8Buf, ctx);
+              hFrame.parseFrame(false);
+            }
+            break;
+          default:
+            break;
+        }
       });
     });
 
